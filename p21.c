@@ -9,8 +9,21 @@ struct node{
 
 };
 
+// Code of root p1 and p2 is repeatation so we write a general code so that need to write repetadely
+
+struct node* createNode(int data){
+    struct node *n; // Creating a node pointer
+    n = (struct node*) malloc(sizeof(struct node)); // Allocating memory in the heap
+    n->data = data; // Setting the data
+    n->left = NULL; // Setting the left and right childer to NULL 
+    n->right = NULL; // FInally return the created node
+    return n;
+}
 
 int main(){
+
+    /*
+
     // constructing the root node
     struct node *p;
     p = (struct node *) malloc(sizeof(struct node));
@@ -35,5 +48,17 @@ int main(){
     // Linking the root node with left and right childern
     p->left = p1;
     p->right =p2;
+
+    */
+
+    // Contructing the root node - Using Function (Recommended)
+    struct node *p = createNode(2);
+    struct node *p1 = createNode(1);
+    struct node *p2 = createNode(4);
+
+    // LInking the root node with left and right childern
+    p->left = p1;
+    p->right = p2;
+
     return 0;
 }
