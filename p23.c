@@ -18,9 +18,10 @@ struct node* createNode(int data){
 
 void postOrder(struct node* root){
     if(root != NULL){
-        printf("%d ", root->data);
+        
         postOrder(root->left);
         postOrder(root->right);
+        printf("%d ", root->data);
     }
 }
 
